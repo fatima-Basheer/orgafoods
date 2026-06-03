@@ -10,7 +10,7 @@ function Hero() {
   useEffect(() => {
     gsap.to(".ring", {
       rotate: 360,
-      transformOrigin: "50% 50%",
+      transformOrigin: "60% 50%",
       duration: 4,
       ease: "linear",
       repeat: -1,
@@ -52,8 +52,6 @@ function Hero() {
 
       <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-8 md:px-12 flex items-center">
         <div className="max-w-2xl text-white w-full">
-          
-    
           <div
             ref={badgeRef}
             className="flex flex-wrap items-center text-[#ddac3c] font-medium mb-4 sm:mb-6 text-xs sm:text-sm tracking-widest uppercase"
@@ -67,15 +65,14 @@ function Hero() {
               ))}
           </div>
 
-      
           <h1
             className="text-[clamp(2.5rem,8vw,5.5rem)] 2xl:text-[110px] font-bold leading-[1.1] sm:leading-[1]"
             style={{ fontFamily: "Playfair Display", fontWeight: 700 }}
           >
             Crafted <br className="hidden sm:inline" /> with Care, <br />
             <div className="relative inline-flex items-center justify-center isolate px-4 py-1">
-              <svg 
-                className="absolute inset-0 w-[50%] h-[50%] -z-10 scale-110 sm:scale-125" 
+              <svg
+                className="absolute inset-0 w-[50%] h-[50%] -z-10 scale-110 sm:scale-125"
                 viewBox="0 0 220 80"
                 preserveAspectRatio="none"
               >
@@ -95,7 +92,6 @@ function Hero() {
             </div>
           </h1>
 
-        
           <p className="my-6 sm:my-8 text-white/80 text-base sm:text-lg md:text-xl max-w-lg 2xl:text-2xl leading-relaxed">
             Pure, farm-sourced cheese made with 100% cow milk. Every block,
             every slice — a testament to quality and tradition.
@@ -113,7 +109,6 @@ function Hero() {
               </span>
             </Button>
           </div>
-
         </div>
       </div>
     </div>

@@ -35,7 +35,6 @@ function Selection() {
   const cardsRef = useRef(null);
 
   useGSAP(() => {
-
     gsap.fromTo(
       badgeRef.current.querySelectorAll(".badge-letter"),
       {
@@ -71,35 +70,6 @@ function Selection() {
         once: true,
       },
     });
-
-    const track = trackRef.current;
-    if (!track) return;
-
-    let x = 0;
-    const speed = 1;
-    let animationId;
-
-    const animate = () => {
-      x -= speed;
-
-      const firstSlide = track.children[0];
-      if (!firstSlide) return;
-
-      const slideWidth = firstSlide.offsetWidth;
-      const totalWidth = slideWidth * slides.length;
-
-      if (Math.abs(x) >= totalWidth) {
-        x = 0;
-      }
-
-      gsap.set(track, { x });
-
-      animationId = requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    return () => cancelAnimationFrame(animationId);
   }, []);
 
   return (
@@ -161,7 +131,6 @@ function Selection() {
                   {slide.logo}{" "}
                 </div>{" "}
               </div>{" "}
-      
               <div className="h-[70%] overflow-hidden">
                 {" "}
                 <img
@@ -170,7 +139,6 @@ function Selection() {
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                 />{" "}
               </div>{" "}
-          
               <div className="h-[30%] p-4 sm:p-5 lg:p-6 flex flex-col justify-center">
                 {" "}
                 <h3

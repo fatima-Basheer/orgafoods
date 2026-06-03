@@ -18,7 +18,7 @@ function Footer() {
         <div>
           <div className="flex items-center text-2xl font-bold gap-2">
             <img src="./logo.png" className="h-10" />
-            <span   style={{ fontFamily: "Playfair Display"}}>OrgaFoods</span>
+            <span style={{ fontFamily: "Playfair Display" }}>OrgaFoods</span>
           </div>
 
           <p className="text-base text-gray-600 leading-5 mt-4">
@@ -29,7 +29,10 @@ function Footer() {
 
         {footerData.map((section, i) => (
           <div key={i}>
-            <h2 className="text-lg font-semibold mb-6"   style={{ fontFamily: "Playfair Display", fontWeight: 700 }}>
+            <h2
+              className="text-lg font-semibold mb-6"
+              style={{ fontFamily: "Playfair Display", fontWeight: 700 }}
+            >
               {section.title}
             </h2>
 
@@ -46,7 +49,10 @@ function Footer() {
         ))}
 
         <div>
-          <h2 className="text-base sm:text-lg font-semibold mb-6"   style={{ fontFamily: "Playfair Display", fontWeight: 700 }}>
+          <h2
+            className="text-base sm:text-lg font-semibold mb-6"
+            style={{ fontFamily: "Playfair Display", fontWeight: 700 }}
+          >
             Get In Touch
           </h2>
 
