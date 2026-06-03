@@ -1,28 +1,28 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { FaLeaf } from "react-icons/fa";
+import { RiShieldCheckFill } from "react-icons/ri";
 const slides = [
   {
-    logo: <FaLeaf />,
+    logo: <RiShieldCheckFill />,
     content: "/food1.jpg",
     title: "Ethically Sourced",
     description: "From farms that care for their land and livestock",
   },
   {
-    logo: <FaLeaf />,
+    logo: <RiShieldCheckFill />,
     content: "/food2.jpg",
     title: "Ethically Sourced",
     description: "From farms that care for their land and livestock",
   },
   {
-    logo: <FaLeaf />,
+    logo: <RiShieldCheckFill />,
     content: "/food4.jpg",
     title: "Ethically Sourced",
     description: "From farms that care for their land and livestock",
   },
   {
-    logo: <FaLeaf />,
+    logo: <RiShieldCheckFill />,
     content: "/food5.jpg",
     title: "Ethically Sourced",
     description: "From farms that care for their land and livestock",
@@ -128,7 +128,7 @@ function Origin() {
 
                   <div className="absolute inset-0 bg-black/70 flex flex-col justify-center items-center text-white p-4 opacity-0 group-hover:opacity-100 transition-all duration-500">
                     <div className="h-14 w-14 rounded-full bg-[#faeed2] flex justify-center items-center">
-                      <h2 className="text-xl font-semibold mb-2 text-[#ddac3c]">
+                      <h2 className="text-2xl font-semibold text-[#ddac3c]">
                         {slide.logo}
                       </h2>
                     </div>

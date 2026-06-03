@@ -45,7 +45,7 @@ function Navbar() {
           {" "}
           <Button
             variant="black"
-            className="relative overflow-hidden px-5 py-3 group"
+            className="relative overflow-hidden px-4 py-3 group"
           >
             <span
               className="
@@ -63,8 +63,8 @@ function Navbar() {
     "
             />
 
-            <span className="relative z-10 flex items-center gap-2 transition-colors duration-300">
-              Get It Now
+            <span className=" relative z-10 flex items-center gap-2 transition-colors duration-300">
+              GET IT NOW
               <FaArrowRight className="text-lg font-light" />
             </span>
           </Button>
