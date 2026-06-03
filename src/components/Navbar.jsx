@@ -17,7 +17,7 @@ function Navbar() {
     <div
       className={` flex justify-between items-center h-20 border-gray-300 dark:border-white/10 px-2 sm:px-4 md:px-12 lg:px-24  bg-white fixed left-0  top-0 right-0 z-50`}
     >
-      {" "}
+  
       <div className=" flex items-center text-xl font-bold gap-2">
         {" "}
         <img src="./logo.png" className="h-10" /> <span>Orga Foods</span>{" "}

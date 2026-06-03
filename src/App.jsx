@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import HomeSection from './sections/HomeSection'
-import './App.css'
 import OurStory from './sections/OurStory'
 import Origin from './sections/Origin'
 import Selection from './sections/Selection'
