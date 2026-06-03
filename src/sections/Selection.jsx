@@ -126,7 +126,7 @@ function Selection() {
               {" "}
               <div className="absolute top-2 right-2 z-10 text-white">
                 {" "}
-                <div className="bg-[#0C4D9A] text-xs sm:text-sm px-3 py-1 rounded-full">
+                <div className="bg-[#496039] text-xs sm:text-sm px-3 py-1 rounded-full">
                   {" "}
                   {slide.logo}{" "}
                 </div>{" "}
