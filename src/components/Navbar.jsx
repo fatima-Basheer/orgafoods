@@ -60,12 +60,12 @@ function Navbar() {
         }`}
       >
         <div className="flex justify-between items-center">
-          <span
-            className="font-bold text-lg text-[#0C4D9A]"
-            style={{ fontFamily: "Playfair Display" }}
-          >
-            Menu
-          </span>
+          <div className="flex items-center text-xl font-bold gap-2">
+            <img src="./orgalogo.png" className="h-10" alt="Logo" />
+            <span style={{ fontFamily: "Playfair Display", fontWeight: 700 }}>
+              OrgaFoods
+            </span>
+          </div>
           <div
             className="text-2xl text-[#444] cursor-pointer hover:rotate-90 duration-500 ease-out"
             onClick={() => setIsOpen(false)}
@@ -81,7 +81,6 @@ function Navbar() {
               key={index}
               href="#"
               className="font-medium tracking-wide text-base text-[#444] uppercase hover:text-[#0C4D9A] transition-colors duration-300 block border-b border-gray-100 pb-2"
-              onClick={() => setIsOpen(false)}
             >
               {link}
             </a>
