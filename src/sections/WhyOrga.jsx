@@ -66,7 +66,7 @@ function WhyOrga() {
   }, []);
 
   return (
-    <section className="client-reviews h-auto mx-auto py-10 md:py-15 lg:py-18 px-4 sm:px-6 md:px-8 lg:px-10 overflow-hidden bg-[#ede7de80]">
+    <section className="client-reviews h-auto mx-auto py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-10 overflow-hidden bg-[#ede7de80]">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
           <div
@@ -92,7 +92,7 @@ function WhyOrga() {
             </span>
           </h1>
 
-          <p className="mt-5 leading-8 max-w-2xl text-black/60 font-medium text-lg">
+          <p className="mt-5 leading-8 max-w-2xl text-slate-600 font-medium text-lg">
             We hold ourselves to a standard that goes beyond the ordinary. Every
             detail matters.
           </p>
@@ -102,27 +102,29 @@ function WhyOrga() {
           {slides.map((slide, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 border border-gray-100 flex flex-col justify-between shadow-[0_10px_30px_-15px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_40px_-15px_rgba(221,172,60,0.18)] translate-y-0 hover:-translate-y-2.5 transition-all duration-300 ease-out group will-change-transform"
+              className="bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-white/60 flex flex-col justify-between shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(221,172,60,0.14)] hover:bg-white translate-y-0 hover:-translate-y-2 transition-all duration-500 ease-out group will-change-transform"
             >
               <div>
-                <span className="text-2xl font-bold tracking-widest text-[#022857] uppercase bg-gray-100 px-3 py-3 rounded-xl inline-block mb-6">
+          
+                <span className="flex items-center justify-center w-12 h-12 text-2xl text-[#022857] bg-[#022857]/5 group-hover:bg-[#ddac3c]/10 group-hover:text-[#ddac3c] rounded-xl mb-6 transition-colors duration-300">
                   {slide.logo}
                 </span>
 
-                <h3 className="text-2xl font-bold text-black/70 mb-4 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-slate-800 mb-3 transition-colors duration-300 group-hover:text-[#022857]">
                   {slide.title}
                 </h3>
 
-                <p className="text-black/60 font-normal leading-relaxed text-base">
+                <p className="text-slate-600 font-normal leading-relaxed text-[15px]">
                   {slide.description}
                 </p>
               </div>
 
-              <div className="mt-4 pt-4 flex justify-end">
+        
+              <div className="mt-4 pt-4  flex justify-end">
                 <span className="text-sm font-semibold text-[#022857] group-hover:text-[#ddac3c] transition-colors duration-300 flex items-center gap-2 cursor-pointer">
                   Discover More
                   <span className="transform group-hover:translate-x-1 transition-transform duration-300">
-                  <FaArrowRight />
+                    <FaArrowRight />
                   </span>
                 </span>
               </div>
