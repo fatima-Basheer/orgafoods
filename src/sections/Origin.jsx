@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { RiShieldCheckFill } from "react-icons/ri";
+
 const slides = [
   {
     logo: <RiShieldCheckFill />,
@@ -32,6 +33,7 @@ const slides = [
 function Origin() {
   const trackRef = useRef(null);
   const badgeRef = useRef(null);
+
   useGSAP(() => {
     gsap.fromTo(
       badgeRef.current.querySelectorAll(".badge-letter"),
@@ -52,6 +54,7 @@ function Origin() {
         },
       },
     );
+
     const track = trackRef.current;
     if (!track) return;
 
@@ -83,7 +86,7 @@ function Origin() {
   }, []);
 
   return (
-    <section className="client-reviews bg-black/90 h-auto mx-auto py-10 md:py-15 lg:py-18">
+    <section className="client-reviews bg-[#EDE7DE80] h-auto mx-auto py-10 md:py-15 lg:py-18">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12">
           <div
@@ -99,14 +102,11 @@ function Origin() {
             </span>
           </div>
 
-          <h1
-            className="text-4xl md:text-5xl font-bold leading-tight text-white"
-            style={{ fontFamily: "Playfair Display" }}
-          >
-            From the Heart of the Farm{" "}
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight text-[#022857]">
+            From the Heart of the Farm
           </h1>
 
-          <p className="mt-5 leading-8 max-w-2xl text-white/40">
+          <p className="mt-5 leading-8 max-w-2xl text-black/60 font-medium text-lg">
             Every drop of milk that goes into our cheese is sourced from farms
             where quality, freshness, and responsible farming come first.
           </p>
@@ -127,7 +127,7 @@ function Origin() {
                   />
 
                   <div className="absolute inset-0 bg-black/70 flex flex-col justify-center items-center text-white p-4 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                    <div className="h-14 w-14 rounded-full bg-[#faeed2] flex justify-center items-center">
+                    <div className="h-14 w-14 rounded-full bg-[#ddac3c]/25 border-[1px] border-[#ddac3c] flex justify-center items-center">
                       <h2 className="text-2xl font-semibold text-[#ddac3c]">
                         {slide.logo}
                       </h2>

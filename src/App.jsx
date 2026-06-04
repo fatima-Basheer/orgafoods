@@ -5,6 +5,7 @@ import Origin from './sections/Origin'
 import Selection from './sections/Selection'
 import Quality from './sections/Quality'
 import Footer from './sections/Footer'
+import WhyOrga from './sections/WhyOrga'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -15,6 +16,7 @@ function App() {
  <Origin/>
  <Selection/>
  <Quality/>
+ <WhyOrga/>
  <Footer/>
  
 </>

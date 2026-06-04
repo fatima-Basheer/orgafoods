@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { FaArrowRight } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
@@ -6,16 +6,6 @@ import Button from "./Button";
 
 function Hero() {
   const badgeRef = useRef(null);
-
-  useEffect(() => {
-    gsap.to(".ring", {
-      rotate: 360,
-      transformOrigin: "60% 50%",
-      duration: 4,
-      ease: "linear",
-      repeat: -1,
-    });
-  }, []);
 
   useGSAP(() => {
     gsap.fromTo(
@@ -38,23 +28,20 @@ function Hero() {
   }, []);
 
   return (
-    <div className="relative h-screen min-h-[800px] mx-2 md:mx-6 overflow-hidden">
-      <video
-        src="./foodvedio.mp4"
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
+    <div className="relative h-screen min-h-[800px] overflow-hidden">
+      <img
+        src="/hero-cheese.jpg"
+        className="absolute inset-0 h-full w-full object-cover"
+        alt="Hero Background"
       />
 
-      <div className="absolute inset-0 bg-black/50 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/5 z-10" />
 
       <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-8 md:px-12 flex items-center">
         <div className="max-w-2xl text-white w-full">
           <div
             ref={badgeRef}
-            className="flex flex-wrap items-center text-[#ddac3c] font-medium mb-4 sm:mb-6 text-xs sm:text-sm tracking-widest uppercase"
+            className="flex flex-wrap items-center text-[#ddac3c] font-medium mb-4 sm:mb-6 text-lg tracking-widest uppercase"
           >
             {"Premium Quality · From Farm to Flavour"
               .split("")
@@ -66,44 +53,25 @@ function Hero() {
           </div>
 
           <h1
-            className="text-[clamp(2.5rem,8vw,5.5rem)] 2xl:text-[110px] font-bold leading-[1.1] sm:leading-[1]"
+            className="text-5xl xl:text-8xl 2xl:text-8xl text-[#f7f4ed] font-bold leading-[1.1] sm:leading-[1]"
             style={{ fontFamily: "Playfair Display", fontWeight: 700 }}
           >
-            Crafted <br className="hidden sm:inline" /> with Care, <br />
-            <div className="relative inline-flex items-center justify-center isolate px-4 py-1">
-              <svg
-                className="absolute inset-0 w-[50%] h-[50%] -z-10 scale-110 sm:scale-125"
-                viewBox="0 0 220 80"
-                preserveAspectRatio="none"
-              >
-                <ellipse
-                  cx="80"
-                  cy="20"
-                  rx="95"
-                  ry="35"
-                  fill="none"
-                  stroke="#ddac3c"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  className="ring"
-                />
-              </svg>
-              <span className="italic relative z-10">Naturally.</span>
-            </div>
+            Crafted <br /> with Care, <br />
+            Naturally
           </h1>
 
-          <p className="my-6 sm:my-8 text-white/80 text-base sm:text-lg md:text-xl max-w-lg 2xl:text-2xl leading-relaxed">
+          <p className="my-6 sm:my-8 text-white/80 text-lg md:text-xl max-w-lg 2xl:text-2xl leading-relaxed">
             Pure, farm-sourced cheese made with 100% cow milk. Every block,
             every slice — a testament to quality and tradition.
           </p>
 
-          <div className="mt-4 sm:mt-6">
+          <div className=" mt-12 sm:mt-8">
             <Button
               variant="black"
-              className="relative overflow-hidden px-8 sm:px-10 py-3 group w-full sm:w-auto text-sm sm:text-base"
+              className="relative overflow-hidden px-8 sm:px-6 py-3 group w-full sm:w-auto text-sm sm:text-base"
             >
               <span className="absolute left-0 bottom-0 w-full h-0 bg-[#ddac3c] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:h-full z-0" />
-              <span className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-300">
+              <span className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-300 tracking-widest">
                 DISCOVER ORGAFOODS
                 <FaArrowRight className="text-base sm:text-lg font-light" />
               </span>

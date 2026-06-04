@@ -1,9 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { IoIosAdd } from "react-icons/io";
-import { RxCross2 } from "react-icons/rx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,11 +12,13 @@ const slides = [
   },
   {
     title: "Selection",
-    description: "Only batches that meet our strict purity criteria move forward.",
+    description:
+      "Only batches that meet our strict purity criteria move forward.",
   },
   {
     title: "Crafting",
-    description: "Traditional techniques combined with modern hygiene standards.",
+    description:
+      "Traditional techniques combined with modern hygiene standards.",
   },
   {
     title: "Quality Check",
@@ -33,66 +33,66 @@ const slides = [
 function Quality() {
   const badgeRef = useRef(null);
   const containerRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(null);
 
   useGSAP(() => {
+    const letters = badgeRef.current.querySelectorAll(".badge-letter");
+
     gsap.fromTo(
-      badgeRef.current.querySelectorAll(".badge-letter"),
-      { x: 20, opacity: 0 },
+      letters,
+      { y: 15, opacity: 0, filter: "blur(4px)" },
       {
-        x: 0,
+        y: 0,
         opacity: 1,
-        duration: 0.6,
-        ease: "power2.out",
-        stagger: 0.02,
+        filter: "blur(0px)",
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.03,
         scrollTrigger: {
           trigger: badgeRef.current,
-          start: "top 85%",
-          toggleActions: "play none none none",
+          start: "top 90%",
         },
-      }
+      },
+    );
+
+    const cards = containerRef.current.querySelectorAll(".card-item");
+
+    gsap.fromTo(
+      cards,
+      { opacity: 0, y: 60, scale: 0.96, filter: "blur(4px)" },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        filter: "blur(0px)",
+        duration: 1.2,
+        stagger: 0.15,
+        ease: "expo.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 78%",
+        },
+      },
     );
   }, []);
 
-  const toggleCard = (index) => {
-    const isOpening = activeIndex !== index;
-    const cards = containerRef.current.querySelectorAll(".card-item");
-
-    let con = gsap.context(() => {
-      if (activeIndex !== null) {
-        const prevCard = cards[activeIndex];
-        gsap.to(prevCard, { height: 80, duration: 0.35, ease: "power2.out" });
-        gsap.to(prevCard.querySelector(".card-content"), { opacity: 0, duration: 0.15 });
-      }
-
-      if (isOpening) {
-        const nextCard = cards[index];
-        
-        gsap.set(nextCard, { height: "auto" });
-        gsap.from(nextCard, { height: 80, duration: 0.35, ease: "power2.out" });
-        
-        gsap.fromTo(
-          nextCard.querySelector(".card-content"),
-          { opacity: 0, y: 4 },
-          { opacity: 1, y: 0, duration: 0.25, delay: 0.1 }
-        );
-        
-        setActiveIndex(index);
-      } else {
-        setActiveIndex(null);
-      }
-    }, containerRef);
-
-    return () => con.revert();
-  };
-
   return (
-    <section className="client-reviews h-auto mx-auto py-10 md:py-15 lg:py-25 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-16 bg-[#496039]">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-    
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12">
-          <div ref={badgeRef} className="flex items-center justify-center text-[#ddac3c] font-medium mb-2">
-            <span className="flex uppercase tracking-widest text-xs sm:text-sm">
+    <section className="relative min-h-screen w-full py-20 px-4 md:px-12 flex flex-col justify-center overflow-hidden">
+      <div className="absolute inset-0 w-full h-full z-0">
+        <video
+          src="/steps.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#022857]/45 backdrop-blur-[2px]" />
+      </div>
+
+      <div className="relative z-10 w-full max-w-[1500px] mx-auto">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-20 xl:mb-28">
+          <div ref={badgeRef} className="text-[#ddac3c] font-medium mb-3">
+            <span className="flex uppercase tracking-widest text-xs sm:text-sm font-semibold">
               {"OUR PROCESS".split("").map((char, i) => (
                 <span key={i} className="badge-letter inline-block">
                   {char === " " ? "\u00A0" : char}
@@ -100,38 +100,48 @@ function Quality() {
               ))}
             </span>
           </div>
-          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white" style={{ fontFamily: "Playfair Display" }}>
-            Quality at Every Step
-          </h1>
-          <p className="mt-4 md:mt-5 text-[18px] font-medium leading-7 md:leading-8 max-w-2xl text-white/70 px-2">
-            From farm gate to your kitchen, we maintain an unbroken chain of care, precision, and quality assurance.
+
+        
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+            Quality at Every{" "}
+            <span
+              className="italic text-[#ddac3c] font-light block sm:inline-block"
+              style={{ fontFamily: "Playfair Display" }}
+            >
+              Step
+            </span>
+          </h2>
+          
+          <p className="text-base sm:text-lg max-w-2xl text-white/70 px-2">
+            From farm gate to your kitchen, we maintain an unbroken chain of
+            care, precision, and quality assurance.
           </p>
         </div>
 
-        <div ref={containerRef} className="flex flex-col gap-3 max-w-2xl mx-auto w-full">
+        <div
+          ref={containerRef}
+          className="flex flex-col md:grid md:grid-cols-2 xl:flex xl:flex-row gap-4 xl:gap-5 w-full items-stretch justify-center pb-16"
+        >
           {slides.map((slide, index) => {
-            const isOpen = activeIndex === index;
             return (
               <div
                 key={index}
-                className={`card-item h-[80px] overflow-hidden bg-white/5 border rounded-xl px-6 flex flex-col justify-start cursor-pointer transition-colors duration-200 select-none ${
-                  isOpen ? "border-white/40 bg-white/10" : "border-white/15 hover:bg-white/10"
-                }`}
-                onClick={() => toggleCard(index)}
+                className="card-item w-full h-auto bg-white/5 border border-white/10 rounded-xl p-6 flex flex-col justify-start select-none transition-all duration-500 ease-out will-change-transform hover:bg-white/10 hover:border-white/30 hover:scale-[1.03] hover:shadow-xl hover:shadow-black/20"
               >
-              
-                <div className="h-[80px] min-h-[80px] flex items-center justify-between w-full">
-                  <h3 className="text-lg md:text-xl font-medium text-white tracking-wide">
+                <div className="flex flex-col items-start gap-1 mb-3">
+                  <span className="text-[10px] font-mono tracking-widest text-[#ddac3c] uppercase font-bold">
+                    Step 0{index + 1}
+                  </span>
+                  <h3
+                    className="text-base sm:text-lg font-semibold text-white tracking-wide"
+                    style={{ fontFamily: "Playfair Display" }}
+                  >
                     {slide.title}
                   </h3>
-              
-                  <div className="text-white text-3xl flex items-center justify-center pointer-events-none transition-transform duration-200">
-                    {isOpen ? <RxCross2 /> : <IoIosAdd />}
-                  </div>
                 </div>
 
-                <div className="card-content opacity-0 pb-6 pr-4">
-                  <p className="text-white/70 text-sm md:text-base leading-relaxed max-w-xl">
+                <div className="w-full">
+                  <p className="text-white/70 text-xs sm:text-sm leading-relaxed">
                     {slide.description}
                   </p>
                 </div>

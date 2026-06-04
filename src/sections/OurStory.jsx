@@ -85,7 +85,7 @@ function OurStory() {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between gap-10 px-6 md:px-16 py-30">
+    <div className="flex flex-col bg-[#faf8f5] md:flex-row items-center justify-between gap-10 px-6 md:px-16 py-30">
       <div className="flex-1">
         <div
           ref={badgeRef}
@@ -102,12 +102,11 @@ function OurStory() {
 
         <h1
           ref={headingRef}
-          className="text-4xl md:text-5xl font-bold leading-tight"
-          style={{ fontFamily: "Playfair Display" }}
+          className="text-4xl md:text-5xl font-bold leading-[1.1] text-[#022857]"
         >
           Rooted in Quality,{" "}
           <span
-            className="italic text-[#0C4D9A] font-light"
+            className="italic text-[#ddac3c] font-light"
             style={{ fontFamily: "Playfair Display" }}
           >
             Driven by Passion
@@ -116,23 +115,22 @@ function OurStory() {
 
         <div
           ref={textContentRef}
-          className="text-black text-lg mt-6 leading-[0.9]"
-          style={{ fontFamily: "Playfair Display" }}
+          className="text-black/60 text-base mt-6 "
         >
-          <p className="mt-5 leading-8">
+          <p className="mt-4 leading-[1.6]">
             OrgaFoods was born from a simple belief — that great cheese starts
             with great milk. For years, we've been committed to bringing
             families the finest dairy products, crafted from 100% pure cow milk
             sourced from trusted farms.
           </p>
 
-          <p className="mt-5 leading-8">
+          <p className="mt-4 leading-[1.6]">
             Every product we create carries the care and attention of artisans
             who understand that quality isn't a shortcut. It's a craft, refined
             over time, guided by tradition, and held to the highest standards.
           </p>
 
-          <p className="mt-5 leading-8">
+          <p className="mt-4 leading-[1.6]">
             From our farms to your table, OrgaFoods represents a promise — of
             purity, freshness, and honest goodness.
           </p>
@@ -151,7 +149,7 @@ function OurStory() {
 
         <div
           ref={bannerRef}
-          className="z-[9999] absolute bottom-4 left-4 bg-[#ddac3c]  text-white px-5 py-3 rounded-lg backdrop-blur-md"
+          className="z-[9999] absolute bottom-4 left-4 bg-[#ddac3c] text-white px-5 py-3 rounded-lg backdrop-blur-md"
         >
           <h4 className="text-sm md:text-base font-semibold">100% Pure Milk</h4>
         </div>

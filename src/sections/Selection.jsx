@@ -30,131 +30,133 @@ const slides = [
 ];
 
 function Selection() {
-  const trackRef = useRef(null);
   const badgeRef = useRef(null);
   const cardsRef = useRef(null);
 
   useGSAP(() => {
+
+    const letters = badgeRef.current.querySelectorAll(".badge-letter");
+    
     gsap.fromTo(
-      badgeRef.current.querySelectorAll(".badge-letter"),
+      letters,
       {
-        x: 30,
+        y: 12,
         opacity: 0,
+        filter: "blur(4px)",
       },
       {
-        x: 0,
+        y: 0,
         opacity: 1,
-        duration: 0.7,
+        filter: "blur(0px)",
+        duration: 0.9,
         ease: "power3.out",
-        stagger: 0.03,
+        stagger: 0.025,
         scrollTrigger: {
           trigger: badgeRef.current,
-          start: "top 85%",
+          start: "top 88%",
           toggleActions: "play none none none",
         },
-      },
+      }
     );
 
-    gsap.from(cardsRef.current.children, {
-      y: 50,
-      opacity: 0,
-
-      scale: 0.96,
-      duration: 1.4,
-      stagger: 0.18,
-      ease: "expo.out",
-      scrollTrigger: {
-        trigger: cardsRef.current,
-        start: "top 82%",
-        toggleActions: "play none none none",
-        once: true,
+    gsap.fromTo(
+      cardsRef.current.children,
+      {
+        y: 60,
+        opacity: 0,
+        scale: 0.97,
       },
-    });
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1.4,
+        stagger: 0.12,
+        ease: "power4.out",
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: cardsRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+      }
+    );
   }, []);
 
   return (
-    <section className="client-reviews h-auto mx-auto py-10 md:py-15 lg:py-18 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-16">
-      {" "}
+    <section className="client-reviews h-auto mx-auto py-10 md:py-15 lg:py-18 px-4 sm:px-6 md:px-8 lg:px-10 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        {" "}
+        
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12">
-          {" "}
           <div
             ref={badgeRef}
-            className="flex items-center justify-center text-[#ddac3c] font-medium mb-6"
+            className="flex items-center justify-center text-[#ddac3c] font-medium mb-6 select-none"
           >
-            {" "}
             <span className="flex uppercase tracking-widest">
               {"OUR SELECTION".split("").map((char, i) => (
-                <span key={i} className="badge-letter inline-block">
-                  {char === " " ? "\u00A0" : char}{" "}
+                <span key={i} className="badge-letter inline-block will-change-transform">
+                  {char === " " ? "\u00A0" : char}
                 </span>
-              ))}{" "}
-            </span>{" "}
+              ))}
+            </span>
           </div>
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
-            style={{ fontFamily: "Playfair Display" }}
-          >
-            {" "}
+
+        
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight text-[#022857]">
             The OrgaFoods{" "}
             <span
-              className="italic text-[#0C4D9A] font-light"
+              className="italic text-[#ddac3c] font-light"
               style={{ fontFamily: "Playfair Display" }}
             >
-              {" "}
-              Collection{" "}
-            </span>{" "}
-          </h1>{" "}
-          <p className="mt-4 md:mt-5 text-sm sm:text-base leading-7 md:leading-8 max-w-2xl text-black/40 px-2">
-            {" "}
-            Every drop of milk that goes into our cheese is sourced from farms
-            where quality, freshness, and responsible farming come first.{" "}
-          </p>{" "}
-        </div>{" "}
+              Collection
+            </span>
+          </h1>
+          
+          <p className="mt-5 leading-8 max-w-2xl text-black/60 font-medium text-lg">
+            A curated range of premium cheese, each crafted with the same dedication to quality and taste.
+          </p>
+        </div>
+
+    
         <div
           ref={cardsRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8 mt-10 md:mt-12"
           style={{ perspective: "1000px" }}
         >
-          {" "}
           {slides.map((slide, index) => (
             <div
               key={index}
-              className="relative h-[450px] sm:h-[500px] md:h-[550px] lg:h-[600px] bg-white rounded-2xl overflow-hidden shadow-lg will-change-transform"
+              className="group relative flex flex-col h-auto sm:h-[500px] md:h-[550px] lg:h-[600px] bg-[#faf8f5] rounded-2xl overflow-hidden shadow-lg transform-gpu will-change-transform transition-shadow duration-500 ease-out hover:shadow-xl"
             >
-              {" "}
-              <div className="absolute top-2 right-2 z-10 text-white">
-                {" "}
-                <div className="bg-[#496039] text-xs sm:text-sm px-3 py-1 rounded-full">
-                  {" "}
-                  {slide.logo}{" "}
-                </div>{" "}
-              </div>{" "}
-              <div className="h-[70%] overflow-hidden">
-                {" "}
+          
+        
+              <div className="relative h-[250px] sm:h-[60%] w-full overflow-hidden bg-[#faf8f5]">
+                
+            
+                <div className="absolute top-3 left-3 z-10 text-white pointer-events-none">
+                  <div className="bg-[#022857] text-xs sm:text-sm px-3 py-1 rounded-full font-medium shadow-sm">
+                    {slide.logo}
+                  </div>
+                </div>
+
                 <img
                   src={slide.content}
                   alt={slide.title}
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                />{" "}
-              </div>{" "}
-              <div className="h-[30%] p-4 sm:p-5 lg:p-6 flex flex-col justify-center">
-                {" "}
-                <h3
-                  className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3"
-                  style={{ fontFamily: "Playfair Display" }}
-                >
-                  {" "}
-                  {slide.title}{" "}
-                </h3>{" "}
-                <p className="text-gray-600 text-sm sm:text-base leading-6">
-                  {" "}
-                  {slide.description}{" "}
-                </p>{" "}
-              </div>{" "}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                />
+              </div>
+
+              <div className="flex-1 p-5 sm:p-6 flex flex-col justify-center">
+                <h3 className="text-xl sm:text-2xl font-semibold text-gray-900">
+                  {slide.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed mt-2 sm:mt-3">
+                  {slide.description}
+                </p>
+              </div>
             </div>
-          ))}{" "}
+          ))}
         </div>
       </div>
     </section>
