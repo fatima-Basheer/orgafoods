@@ -13,6 +13,18 @@ const navlinks = [
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+
+  const handleSmoothScroll = (e, targetId) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <>
       <nav className="flex justify-between items-center h-18 px-4 md:px-12 lg:px-24 bg-white fixed left-0 top-0 right-0 z-50">
@@ -37,6 +49,7 @@ function Navbar() {
             <a
               key={index}
               href={link.id}
+              onClick={(e) => handleSmoothScroll(e, link.id)}
               className="font-medium tracking-wide text-[15px] text-[#0c4d9a] uppercase hover:text-[#ddac3c] duration-500"
             >
               {link.name}
@@ -52,6 +65,7 @@ function Navbar() {
           <ImMenu />
         </button>
       </nav>
+
 
       <div
         className={`fixed inset-0 bg-black/40 z-50 transition-opacity duration-800 ease-[cubic-bezier(0.25,1,0.5,1)] lg:hidden ${
@@ -83,12 +97,16 @@ function Navbar() {
           </div>
         </div>
 
+
         <div className="flex flex-col gap-5">
           {navlinks.map((link, index) => (
             <a
               key={index}
               href={link.id}
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => {
+                setIsOpen(false);
+                handleSmoothScroll(e, link.id);
+              }}
               className="font-medium tracking-wide text-base text-[#444] uppercase hover:text-[#0C4D9A] transition-colors duration-300 block border-b border-gray-100 pb-2"
             >
               {link.name}

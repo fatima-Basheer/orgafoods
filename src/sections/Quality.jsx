@@ -76,7 +76,7 @@ function Quality() {
   }, []);
 
   return (
-    <section id="quality" className="relative min-h-screen w-full py-20 px-4 md:px-12 flex flex-col justify-center overflow-hidden">
+    <section id="quality" className="relative min-h-screen w-full py-25 px-4 md:px-12 flex flex-col justify-center overflow-hidden">
       <div className="absolute inset-0 w-full h-full z-0">
         <video
           src="/steps.mp4"

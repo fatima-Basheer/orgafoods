@@ -85,7 +85,7 @@ function Selection() {
   }, []);
 
   return (
-    <section id="selection" className="client-reviews h-auto mx-auto py-10 md:py-15 lg:py-18 px-4 sm:px-6 md:px-8 lg:px-10 overflow-hidden">
+    <section id="selection" className="client-reviews h-auto mx-auto py-10 md:py-15 lg:py-25 px-4 sm:px-6 md:px-8 lg:px-10 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12">
