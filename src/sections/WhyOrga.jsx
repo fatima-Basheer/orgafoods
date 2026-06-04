@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { RiUserStarLine } from "react-icons/ri";
+import { FaArrowRight } from "react-icons/fa6";
 gsap.registerPlugin(ScrollTrigger);
 
 const slides = [
@@ -121,7 +122,7 @@ function WhyOrga() {
                 <span className="text-sm font-semibold text-[#022857] group-hover:text-[#ddac3c] transition-colors duration-300 flex items-center gap-2 cursor-pointer">
                   Discover More
                   <span className="transform group-hover:translate-x-1 transition-transform duration-300">
-                    →
+                  <FaArrowRight />
                   </span>
                 </span>
               </div>
