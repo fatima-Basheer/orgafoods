@@ -85,7 +85,7 @@ function OurStory() {
   }, []);
 
   return (
-    <div className="flex flex-col bg-[#faf8f5] md:flex-row items-center justify-between gap-10 px-6 md:px-16 py-30">
+    <div className="flex flex-col bg-[#faf8f5] md:flex-row items-center justify-between gap-10 px-6 md:px-16  2xl:px-80 py-30">
       <div className="flex-1">
         <div
           ref={badgeRef}
@@ -115,7 +115,7 @@ function OurStory() {
 
         <div
           ref={textContentRef}
-          className="text-black/60 text-base mt-6 "
+          className="text-black/60 text-base 2xl:text-[18px] mt-6 "
         >
           <p className="mt-4 leading-[1.6]">
             OrgaFoods was born from a simple belief — that great cheese starts
