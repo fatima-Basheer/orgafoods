@@ -12,7 +12,7 @@ const footerData = [
 
 function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-[#022857] via-[#011632] to-[#000a18] text-white py-10 px-4 sm:px-6 lg:px-20">
+    <footer id="contact" className="bg-gradient-to-br from-[#022857] via-[#011632] to-[#000a18] text-white py-10 px-4 sm:px-6 lg:px-20">
       <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         <div>
           <div className="flex items-center text-xl font-bold gap-3">
@@ -21,7 +21,7 @@ function Footer() {
               <img src="./orgalogo.png" className="h-10 w-auto object-contain" alt="OrgaFoods Logo" /> 
             </div>
             
-            <span style={{ fontFamily: "Playfair Display", fontWeight: 700 }} className="text-[#ddac3c]">
+            <span style={{ fontFamily: "Playfair Display", fontWeight: 700 }} className="text-[#f4f4f4]">
               OrgaFoods
             </span>
           </div>

@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { DiJavascript } from "react-icons/di";
 import { ImMenu } from "react-icons/im";
 import { IoMdClose } from "react-icons/io";
 
 const navlinks = [
-  "Our Story",
-  "Origins",
-  "Our Selection",
-  "Quality",
-  "Contact",
+  { name: "Our Story", id: "#our-story" },
+  { name: "Origins", id: "#origins" },
+  { name: "Our Selection", id: "#selection" },
+  { name: "Quality", id: "#quality" },
+  { name: "Contact", id: "#contact" },
 ];
 
 function Navbar() {
@@ -19,19 +18,28 @@ function Navbar() {
       <nav className="flex justify-between items-center h-18 px-4 md:px-12 lg:px-24 bg-white fixed left-0 top-0 right-0 z-50">
         <div className="flex items-center text-xl font-bold gap-2">
           <img src="./orgalogo.png" className="h-15" alt="Logo" />
-          <span style={{ fontFamily: "Playfair Display", fontWeight: 700 }}>
-            OrgaFoods
-          </span>
+          <div
+            className="text-[#0C4D9A]"
+            style={{ fontFamily: "Playfair Display", fontWeight: 700 }}
+          >
+            Orga
+            <span
+              style={{ fontFamily: "Playfair Display", fontWeight: 700 }}
+              className="text-[#ddac3c]"
+            >
+              Foods
+            </span>
+          </div>
         </div>
 
         <div className="hidden lg:flex items-center gap-8">
           {navlinks.map((link, index) => (
             <a
               key={index}
-              href="#"
-              className="font-medium tracking-wide text-[15px] text-[#444] uppercase hover:text-[#0C4D9A] duration-500"
+              href={link.id}
+              className="font-medium tracking-wide text-[15px] text-[#0c4d9a] uppercase hover:text-[#ddac3c] duration-500"
             >
-              {link}
+              {link.name}
             </a>
           ))}
         </div>
@@ -79,10 +87,11 @@ function Navbar() {
           {navlinks.map((link, index) => (
             <a
               key={index}
-              href="#"
+              href={link.id}
+              onClick={() => setIsOpen(false)}
               className="font-medium tracking-wide text-base text-[#444] uppercase hover:text-[#0C4D9A] transition-colors duration-300 block border-b border-gray-100 pb-2"
             >
-              {link}
+              {link.name}
             </a>
           ))}
         </div>

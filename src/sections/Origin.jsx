@@ -86,7 +86,7 @@ function Origin() {
   }, []);
 
   return (
-    <section className="client-reviews bg-[#EDE7DE80] h-auto mx-auto py-10 md:py-15 lg:py-18">
+    <section id="origins" className="client-reviews bg-[#EDE7DE80] h-auto mx-auto py-10 md:py-15 lg:py-18">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12">
           <div

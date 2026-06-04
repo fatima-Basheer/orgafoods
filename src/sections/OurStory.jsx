@@ -85,7 +85,7 @@ function OurStory() {
   }, []);
 
   return (
-    <div className="flex flex-col bg-[#faf8f5] md:flex-row items-center justify-between gap-10 px-6 md:px-16  2xl:px-80 py-30">
+    <div id="our-story" className="flex flex-col bg-[#faf8f5] md:flex-row items-center justify-between gap-10 px-6 md:px-16  2xl:px-80 py-30">
       <div className="flex-1">
         <div
           ref={badgeRef}
