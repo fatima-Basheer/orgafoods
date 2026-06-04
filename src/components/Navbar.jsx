@@ -16,7 +16,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="flex justify-between items-center h-18 border-b border-gray-300 dark:border-white/10 px-4 md:px-12 lg:px-24 bg-white fixed left-0 top-0 right-0 z-50">
+      <nav className="flex justify-between items-center h-18 px-4 md:px-12 lg:px-24 bg-white fixed left-0 top-0 right-0 z-50">
         <div className="flex items-center text-xl font-bold gap-2">
           <img src="./orgalogo.png" className="h-15" alt="Logo" />
           <span style={{ fontFamily: "Playfair Display", fontWeight: 700 }}>
